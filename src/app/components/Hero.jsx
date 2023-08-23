@@ -25,7 +25,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-screen flex flex-col items-center justify-around md:h-80 md:flex-row">
+    <div className="w-screen pb-10 flex flex-col items-center justify-around md:h-[90vh] md:flex-row border-1 border-teal-950">
       <div className="flex flex-col justify-between h  md:h-[200px] pl-5 h-80 pb-2">
         <h2 className="text-5xl font-bold text- text-gray-900">
           Muhammad Abdullah Aziz
