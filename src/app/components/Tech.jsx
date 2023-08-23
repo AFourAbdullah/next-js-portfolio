@@ -68,14 +68,14 @@ const Tech = () => {
     },
   ];
   return (
-    <div className="bg-slate-900 h-[100vh] py-4 w-[100vw] items-center flex flex-col">
+    <div className="bg-slate-900  py-4 w-[100vw] items-center flex flex-col">
       <h1 className="text-center text-5xl text-gray-400 font-extrabold mb-8">
         Skills
       </h1>
-      <div className="flex  flex-row flex-wrap py-4 justify-center gap-6 w-[70%]   items-center ">
+      <div className="flex flex-col  md:flex-row flex-wrap py-4 justify-center gap-6 lg:w-[80%] border-2 border-white w-[100%]  items-center ">
         {technologies.map((technology) => (
           <div
-            className="w-[18%] bg-white h-44  rounded-3xl  bg-transparent flex flex-col items-center justify-center border-2 border-y-slate-700"
+            className="lg:w-[18%] md:w-[100%] sm:w-[80%] bg-white h-44  rounded-3xl  bg-transparent flex flex-col items-center justify-center border-2 border-y-slate-700"
             key={technology.name}
           >
             <Image
