@@ -58,24 +58,16 @@ const Tech = () => {
       name: "Next JS",
       icon: next,
     },
-    {
-      name: "Solidity",
-      icon: solidity,
-    },
-    {
-      name: "Ethereum",
-      icon: eth,
-    },
   ];
   return (
     <div className="bg-slate-900  py-4 w-[100vw] items-center flex flex-col">
       <h1 className="text-center text-5xl text-gray-400 font-extrabold mb-8">
         Skills
       </h1>
-      <div className="flex flex-col  md:flex-row flex-wrap py-4 justify-center gap-6 lg:w-[80%] border-2 border-white w-[100%]  items-center ">
+      <div className="flex  flex-wrap py-4 justify-center gap-6 lg:w-[90%]   w-[90%]  items-center ">
         {technologies.map((technology) => (
           <div
-            className="lg:w-[18%] md:w-[100%] sm:w-[80%] bg-white h-44  rounded-3xl  bg-transparent flex flex-col items-center justify-center border-2 border-y-slate-700"
+            className="lg:w-[15%] md:w-[25%] sm:w-[40%] w-[60%] shadow-2xl  bg-slate-800 h-48  rounded-3xl   flex flex-col items-center justify-center drop-shadow-2xl z-10"
             key={technology.name}
           >
             <Image
@@ -84,7 +76,7 @@ const Tech = () => {
               width={100}
               height={100}
             />
-            <h4 className="text-gray-700 text-lg">{technology.name}</h4>
+            <h4 className="text-gray-300 text-lg">{technology.name}</h4>
           </div>
         ))}
       </div>
