@@ -34,7 +34,7 @@ const Hero = () => {
         <h2 className="lg:text-5xl font-bold text-2xl text-center text-gray-900 w-[300px] md:w-full">
           Muhammad Abdullah Aziz
         </h2>
-        <h4 className="text-2xl text-gray-600 w-[300px] md:w-full">
+        <h4 className="text-2xl text-center text-gray-600 w-[300px] md:w-full">
           I am a{" "}
           <span
             className="md:text-xl text-gray-900 font-extrabold"
