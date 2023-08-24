@@ -30,7 +30,10 @@ const ContactForm = () => {
       );
   };
   return (
-    <div className="bg-slate-900  flex justify-center items-center mt-6 flex-col w-screen  h-screen py-4">
+    <div
+      className="bg-slate-900  flex justify-center items-center mt-6 flex-col w-screen  h-screen py-4"
+      id="contactus"
+    >
       <h2 className="text-center text-5xl text-gray-400 font-extrabold mb-8">
         Contact
       </h2>

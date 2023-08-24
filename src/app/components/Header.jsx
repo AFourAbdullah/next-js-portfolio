@@ -18,16 +18,19 @@ const Header = () => {
           {/* Your logo */}
           <Image src={logo} alt="Logo" className="h-8 block w-8" />
         </div>
-        <div className="hidden md:flex space-x-4 w-[60%] text-lg gap-40 justify-start ">
+        <div className="hidden md:flex space-x-4 w-[60%] text-lg gap-20 justify-start ">
           {/* Your navigation links */}
-          <a href="#" className="hover:text-gray-300">
+          <a href="#home" className="hover:text-gray-300">
             Home
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a href="#skills" className="hover:text-gray-300">
             Skills
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a href="#projects" className="hover:text-gray-300">
             Projects
+          </a>
+          <a href="#contactus" className="  hover:bg-gray-700">
+            Contact
           </a>
         </div>
       </div>
@@ -42,27 +45,27 @@ const Header = () => {
         </button>
         {/* Mobile navigation */}
         {isOpen && (
-          <div className="bg-gray-800 block w-screen transition delay-1000 duration-1000 ease-in-out absolute top-0 left-0 mt-16">
+          <div className="bg-gray-800 block w-screen transition  duration-1000 ease-in absolute top-0 left-0 mt-[66px]">
             <a
-              href="#"
+              href="#home"
               className="text-center block py-2 px-4 hover:bg-gray-700"
             >
               Home
             </a>
             <a
-              href="#"
+              href="#skills"
               className=" text-center block py-2 px-4 hover:bg-gray-700"
             >
               Skills
             </a>
             <a
-              href="#"
+              href="#projects"
               className=" text-center block py-2 px-4 hover:bg-gray-700"
             >
               Projects
             </a>
             <a
-              href="#"
+              href="#contactus"
               className=" text-center block py-2 px-4 hover:bg-gray-700"
             >
               Contact
@@ -72,8 +75,8 @@ const Header = () => {
       </div>
       <div className="hidden md:block">
         {/* Contact button */}
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mr-5">
-          Contact
+        <button className="bg-blue-500 hover:bg-blue-600 text-white px-2 w-[150px] py-2 rounded mr-5">
+          Hire Me
         </button>
       </div>
     </nav>

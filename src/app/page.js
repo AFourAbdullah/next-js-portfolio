@@ -7,7 +7,7 @@ import Tech from "./components/Tech";
 
 export default function Home() {
   return (
-    <main className="flex  flex-col items-center justify-between overflow-x-hidden">
+    <main className="flex  flex-col items-center justify-between overflow-x-hidden ">
       <Header />
       <Hero />
       <Tech />

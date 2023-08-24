@@ -1,12 +1,21 @@
+"use client";
 import React from "react";
 import { projects } from "./data";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <div className="w-screen flex flex-col items-center   pb-6">
-      <h2 className="text-black text-5xl my-9">Projects</h2>
+    <motion.div
+      className="w-screen flex flex-col items-center   pb-6"
+      id="projects"
+      initial={{ x: -200 }}
+      whileInView={{ x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-black text-5xl my-9 font-extrabold">Projects</h2>
       <div className="w-[90%] sm:w-[80%] flex flex-wrap justify-center sm:justify-between items-center h-full md:h-[90%]">
         {projects.map((project) => (
           <div className="sm:w-[45%] lg:w-[26%] w-[80%] h-[360px] mt-3 mb-7  rounded-3xl shadow-2xl shadow-gray-800  border-black">
@@ -33,7 +42,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
