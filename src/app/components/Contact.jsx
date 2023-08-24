@@ -1,21 +1,33 @@
 "use client";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
+  const form = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      await axios.post("/api/email", { email, message });
-      setStatus("Email sent successfully!");
-    } catch (error) {
-      setStatus("Error sending email. Please try again.");
-    }
+    emailjs
+      .sendForm(
+        process.env.SERVICE_ID,
+        process.env.TEMPLATE_ID,
+        form.current,
+        process.env.PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
   return (
     <div className="bg-slate-900  flex justify-center items-center mt-6 flex-col w-screen  h-screen py-4">
@@ -23,7 +35,20 @@ const ContactForm = () => {
         Contact
       </h2>
       <div className="sm:w-full w-[90%] max-w-md p-8 backdrop-blur bg-gray-100   rounded-lg shadow-md">
-        <form>
+        <form ref={form} onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="email" className="block mb-1 font-medium">
+              Name
+            </label>
+            <input
+              type="text"
+              name="from_name"
+              className="w-full p-2 border-2 border-slate-800 rounded-md"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
           <div className="mb-4">
             <label htmlFor="email" className="block mb-1 font-medium">
               Email
@@ -31,7 +56,7 @@ const ContactForm = () => {
             <input
               type="email"
               id="email"
-              name="email"
+              name="user_email"
               className="w-full p-2 border-2 border-slate-800 rounded-md"
               placeholder="Your email"
               value={email}
@@ -56,7 +81,6 @@ const ContactForm = () => {
             <button
               type="submit"
               className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-              onClick={handleSubmit}
             >
               Send
             </button>

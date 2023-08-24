@@ -7,9 +7,9 @@ const Projects = () => {
   return (
     <div className="w-screen flex flex-col items-center   pb-6">
       <h2 className="text-black text-5xl my-9">Projects</h2>
-      <div className="w-[80%] flex flex-wrap justify-between items-center h-full md:h-[90%]">
+      <div className="w-[90%] sm:w-[80%] flex flex-wrap justify-center sm:justify-between items-center h-full md:h-[90%]">
         {projects.map((project) => (
-          <div className="md:w-[45%] lg:w-[26%] w-[90%] h-[360px] mt-3 mb-7  rounded-3xl shadow-2xl shadow-gray-800  border-black">
+          <div className="sm:w-[45%] lg:w-[26%] w-[80%] h-[360px] mt-3 mb-7  rounded-3xl shadow-2xl shadow-gray-800  border-black">
             <Image
               src={project.image}
               className="w-full h-[80%] object-cover"
