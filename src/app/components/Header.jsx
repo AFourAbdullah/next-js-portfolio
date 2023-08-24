@@ -31,7 +31,7 @@ const Header = () => {
           <a href="#projects" className="hover:text-gray-300">
             Projects
           </a>
-          <a href="#contactus" className="  hover:bg-gray-700">
+          <a href="#contactus" className="  hover:text-gray-300">
             Contact
           </a>
         </div>
