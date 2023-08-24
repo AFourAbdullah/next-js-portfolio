@@ -6,6 +6,8 @@ import logo from "../../../public/looo.png";
 import Image from "next/image";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const cvfileurl =
+    "https://drive.google.com/file/d/1hlM5HRgQ0XTKlDW1KkL_P3ZxNvfFtNsO/view?usp=drive_link";
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -75,9 +77,16 @@ const Header = () => {
       </div>
       <div className="hidden md:block">
         {/* Contact button */}
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-2 w-[150px] py-2 rounded mr-5">
+        <a
+          href={cvfileurl}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-2 block w-[130px] text-center
+          py-2 rounded mr-5"
+          download
+          target="_blank"
+        >
+          {" "}
           Hire Me
-        </button>
+        </a>
       </div>
     </nav>
   );

@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const ContactForm = () => {
   const [email, setEmail] = useState("");
@@ -15,17 +16,22 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        process.env.SERVICE_ID,
-        process.env.TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
         form.current,
-        process.env.PUBLIC_KEY
+        process.env.NEXT_PUBLIC_PUBLIC_KEY,
+        {
+          from_email: email,
+        }
       )
       .then(
         (result) => {
           console.log(result.text);
+          toast.success("Email sent successfully");
         },
         (error) => {
           console.log(error.text);
+          toast.error(error);
         }
       );
   };
@@ -59,7 +65,7 @@ const ContactForm = () => {
             <input
               type="email"
               id="email"
-              name="user_email"
+              name="from_email"
               className="w-full p-2 border-2 border-slate-800 rounded-md"
               placeholder="Your email"
               value={email}
